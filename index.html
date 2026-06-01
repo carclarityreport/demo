@@ -3,291 +3,437 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarClarity | Find the right car without the confusion</title>
+  <title>CarClarity | Guided car matching for normal people</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="mesh mesh-one"></div>
+    <div class="mesh mesh-two"></div>
+    <div class="mesh mesh-three"></div>
+    <div class="soft-grid"></div>
+  </div>
+
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav shell">
       <a href="#home" class="brand" aria-label="CarClarity home">
-        <span class="brand-mark">CC</span>
-        <span>CarClarity</span>
+        <span class="brand-mark">C</span>
+        <span>
+          <strong>CarClarity</strong>
+          <small>guided car matching</small>
+        </span>
       </a>
-      <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <div class="nav-links" id="navLinks">
-        <a href="#how">How it works</a>
+        <a href="#process">Process</a>
         <a href="#quiz">Quiz</a>
         <a href="#consultants">Consultants</a>
         <a href="#pricing">Pricing</a>
-        <a href="#quiz" class="nav-cta">Start quiz</a>
+        <a class="nav-cta" href="#quiz">Start match</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero shell" id="home">
       <div class="hero-copy">
-        <p class="eyebrow">Built for normal people, not car nerds</p>
-        <h1>Find the right car without the confusion.</h1>
+        <p class="eyebrow">Car advice without the car jargon</p>
+        <h1>Find the right car before you start shopping.</h1>
         <p class="hero-text">
-          Answer a few lifestyle questions and get matched to vehicle categories that actually fit your budget, habits, and priorities.
+          CarClarity turns your lifestyle, commute, budget range, brand preferences, driving style, and past car experience into a clear vehicle match. Then a real consultant can help narrow it down to specific makes, models, years, and tradeoffs.
         </p>
+
         <div class="hero-actions">
-          <a href="#quiz" class="btn primary">Start my match</a>
-          <a href="#pricing" class="btn secondary">See pricing</a>
+          <a href="#quiz" class="btn primary">Start the match</a>
+          <a href="#process" class="btn secondary">See how it works</a>
         </div>
-        <div class="trust-row">
-          <span>No jargon</span>
-          <span>Real consultant help</span>
-          <span>Used or new car friendly</span>
+
+        <div class="cred-row">
+          <span>Multiple price ranges</span>
+          <span>Brand preferences</span>
+          <span>Open-ended context</span>
         </div>
       </div>
 
-      <div class="hero-card" aria-label="Example car match card">
-        <div class="mini-header">
-          <span class="pulse"></span>
-          Live match preview
+      <div class="hero-visual">
+        <div class="liquid-card match-preview">
+          <div class="preview-top">
+            <div>
+              <p>Live profile preview</p>
+              <h3>Balanced commuter</h3>
+            </div>
+            <div class="score-ring">
+              <span>91%</span>
+            </div>
+          </div>
+
+          <div class="flow-lines">
+            <div class="flow-line">
+              <span>Compact SUV</span>
+              <div><i style="width:91%"></i></div>
+            </div>
+            <div class="flow-line">
+              <span>Hybrid sedan</span>
+              <div><i style="width:84%"></i></div>
+            </div>
+            <div class="flow-line">
+              <span>Small crossover</span>
+              <div><i style="width:78%"></i></div>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <div>
+              <small>Commute</small>
+              <strong>15 to 30 mi</strong>
+            </div>
+            <div>
+              <small>Driving style</small>
+              <strong>Steady</strong>
+            </div>
+            <div>
+              <small>Budget window</small>
+              <strong>$20k to $50k</strong>
+            </div>
+            <div>
+              <small>Brand signal</small>
+              <strong>Open, with preferences</strong>
+            </div>
+          </div>
         </div>
-        <div class="match-profile">
-          <div>
-            <p>Your profile</p>
-            <h3>Practical Commuter</h3>
-          </div>
-          <span class="score-badge">92%</span>
+
+        <div class="floating-note note-one">
+          <small>Instead of asking</small>
+          <strong>“What car do you want?”</strong>
         </div>
-        <div class="bars">
-          <div class="bar-item">
-            <span>Compact sedan</span>
-            <div class="bar"><i style="width:92%"></i></div>
-          </div>
-          <div class="bar-item">
-            <span>Hybrid sedan</span>
-            <div class="bar"><i style="width:84%"></i></div>
-          </div>
-          <div class="bar-item">
-            <span>Small SUV</span>
-            <div class="bar"><i style="width:76%"></i></div>
-          </div>
-        </div>
-        <div class="car-icons">
-          <span>🚗</span><span>🔋</span><span>🛡️</span><span>💰</span>
+        <div class="floating-note note-two">
+          <small>We ask</small>
+          <strong>“How do you actually live and drive?”</strong>
         </div>
       </div>
     </section>
 
-    <section class="problem-section">
-      <div class="section-heading narrow">
-        <p class="eyebrow">The problem</p>
-        <h2>Most car sites start with specs. We start with your life.</h2>
+    <section class="intro-band shell">
+      <div class="intro-card">
+        <p class="eyebrow">The point</p>
+        <h2>Most car sites throw listings at you. This narrows the decision first.</h2>
         <p>
-          If you do not know trims, engines, reliability ratings, financing, or what a “good deal” looks like, normal car shopping gets messy fast.
+          The first problem is not finding cars. The first problem is knowing what kind of car actually fits your life. This page is built around that first decision.
         </p>
       </div>
     </section>
 
-    <section class="how" id="how">
+    <section class="process shell" id="process">
       <div class="section-heading">
         <p class="eyebrow">How it works</p>
-        <h2>A simpler way to start car shopping.</h2>
+        <h2>A single guided flow from confusion to clarity.</h2>
       </div>
-      <div class="steps-grid">
-        <article class="step-card">
-          <span>1</span>
+
+      <div class="process-river">
+        <article>
+          <span>01</span>
           <h3>Answer lifestyle questions</h3>
-          <p>Tell us how you drive, what you need space for, and what you care about most.</p>
+          <p>Driving habits, commute distance, parking situation, passengers, weather, and budget.</p>
         </article>
-        <article class="step-card">
-          <span>2</span>
-          <h3>Get category matches</h3>
-          <p>See which car types fit you best before looking at specific listings.</p>
+        <article>
+          <span>02</span>
+          <h3>Explain your last car</h3>
+          <p>Open-ended answers capture the real reasons you liked or disliked your previous vehicle.</p>
         </article>
-        <article class="step-card">
-          <span>3</span>
+        <article>
+          <span>03</span>
+          <h3>Add preferences</h3>
+          <p>Choose multiple price ranges, brands you like, brands you avoid, and anything else important.</p>
+        </article>
+        <article>
+          <span>04</span>
           <h3>Talk to a consultant</h3>
-          <p>Book a call or get a written report with real recommendations.</p>
-        </article>
-        <article class="step-card">
-          <span>4</span>
-          <h3>Shop with confidence</h3>
-          <p>Know what to search for, what to avoid, and what fits your budget.</p>
+          <p>Book a video call or request a report that turns your match into specific direction.</p>
         </article>
       </div>
     </section>
 
-    <section class="quiz-section" id="quiz">
-      <div class="section-heading">
-        <p class="eyebrow">Interactive quiz</p>
-        <h2>Build your car match profile.</h2>
-        <p>Pick the answers that sound closest to you. Your results update at the end.</p>
+    <section class="quiz-section shell" id="quiz">
+      <div class="section-heading centered">
+        <p class="eyebrow">Interactive match quiz</p>
+        <h2>Build your car fit profile.</h2>
+        <p>More detailed than a normal quiz, but still simple enough for someone who does not know cars.</p>
       </div>
 
-      <div class="quiz-shell">
-        <aside class="quiz-sidebar">
+      <div class="quiz-layout">
+        <aside class="quiz-side liquid-card">
           <div class="progress-wrap">
             <div class="progress-label">
-              <span id="stepLabel">Step 1 of 6</span>
-              <span id="progressPercent">17%</span>
+              <span id="stepLabel">Step 1 of 8</span>
+              <span id="progressPercent">13%</span>
             </div>
-            <div class="progress-track"><div id="progressFill"></div></div>
+            <div class="progress-track"><i id="progressFill"></i></div>
           </div>
 
-          <div class="live-profile">
-            <h3>Live preference meter</h3>
-            <div class="meter-row"><span>Reliability</span><strong id="meterReliability">Low</strong></div>
-            <div class="meter-row"><span>Space</span><strong id="meterSpace">Low</strong></div>
-            <div class="meter-row"><span>Budget focus</span><strong id="meterBudget">Low</strong></div>
-            <div class="meter-row"><span>Performance</span><strong id="meterPerformance">Low</strong></div>
+          <div class="signal-panel">
+            <h3>Live fit signals</h3>
+            <p>These update as you answer.</p>
+
+            <div class="signal">
+              <div><span>Efficiency</span><strong id="meterEfficiency">Low</strong></div>
+              <div class="meter"><i id="meterEfficiencyBar"></i></div>
+            </div>
+
+            <div class="signal">
+              <div><span>Space</span><strong id="meterSpace">Low</strong></div>
+              <div class="meter"><i id="meterSpaceBar"></i></div>
+            </div>
+
+            <div class="signal">
+              <div><span>Budget focus</span><strong id="meterBudget">Low</strong></div>
+              <div class="meter"><i id="meterBudgetBar"></i></div>
+            </div>
+
+            <div class="signal">
+              <div><span>Performance</span><strong id="meterPerformance">Low</strong></div>
+              <div class="meter"><i id="meterPerformanceBar"></i></div>
+            </div>
+          </div>
+
+          <div class="profile-note">
+            <small>Current read</small>
+            <strong id="summaryMiniText">Answer a few questions to form your profile.</strong>
           </div>
         </aside>
 
-        <div class="quiz-card">
+        <div class="quiz-card liquid-card">
           <form id="carQuiz">
             <div class="quiz-step active" data-step="1">
-              <h3>What best describes your driving lifestyle?</h3>
-              <p class="question-help">Choose all that apply. Most people fit more than one.</p>
-              <div class="option-grid">
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="commuter"><span>🚗</span><strong>Daily commuter</strong><small>Reliable, efficient, easy to own</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="student"><span>🎒</span><strong>Student driver</strong><small>Affordable and practical</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="family"><span>👨‍👩‍👧</span><strong>Family driver</strong><small>Safety, space, comfort</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="adventure"><span>🏔️</span><strong>Outdoor/adventure</strong><small>Gear space and capability</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="city"><span>🏙️</span><strong>City driving</strong><small>Easy parking and fuel savings</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="work"><span>🛠️</span><strong>Work/truck needs</strong><small>Hauling, towing, durability</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="roadtrip"><span>🛣️</span><strong>Road trips</strong><small>Comfort, range, and cargo room</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="firstCar"><span>🧭</span><strong>First real car</strong><small>Simple, safe, and not risky</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="luxury"><span>✨</span><strong>Comfort/luxury focused</strong><small>Quiet cabin, nicer interior, smooth ride</small></label>
-                <label class="option-card"><input type="checkbox" name="lifestyle" value="eco"><span>🌱</span><strong>Eco-conscious</strong><small>Hybrid, EV, or lower fuel use</small></label>
+              <div class="question-header">
+                <p class="step-kicker">Lifestyle</p>
+                <h3>What best describes how this car fits into your life?</h3>
+                <p>Choose all that apply.</p>
+              </div>
+
+              <div class="choice-grid three">
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="commuter"><span class="choice-code">DA</span><strong>Daily commuter</strong><small>Mostly work, school, errands, and routine driving.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="student"><span class="choice-code">ST</span><strong>Student driver</strong><small>Budget matters and the car needs to be easy to own.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="family"><span class="choice-code">FM</span><strong>Family driver</strong><small>Passengers, safety, comfort, and storage matter.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="adventure"><span class="choice-code">OD</span><strong>Outdoor or adventure</strong><small>Gear, trails, trips, snow, boards, bikes, or camping.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="city"><span class="choice-code">CT</span><strong>City driving</strong><small>Parking, visibility, and maneuverability matter.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="roadtrip"><span class="choice-code">RT</span><strong>Road trips</strong><small>You care about comfort, range, seats, and storage.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="work"><span class="choice-code">WK</span><strong>Work or utility</strong><small>You may need hauling, towing, durability, or cargo.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="firstCar"><span class="choice-code">FC</span><strong>First real car</strong><small>Simple, safe, reliable, and not overly risky.</small></label>
+                <label class="choice-card"><input type="checkbox" name="lifestyle" value="eco"><span class="choice-code">EC</span><strong>Efficiency focused</strong><small>You are interested in saving fuel or considering hybrid/EV.</small></label>
               </div>
             </div>
 
             <div class="quiz-step" data-step="2">
-              <h3>What was your last car?</h3>
-              <p class="question-help">This helps us understand what you already know you like or hate.</p>
-              <input class="text-input" type="text" name="lastCar" placeholder="Example: 2014 Honda Civic">
-
-              <h4>What did you like about it?</h4>
-              <div class="chips">
-                <label><input type="checkbox" name="liked" value="reliable">Reliable</label>
-                <label><input type="checkbox" name="liked" value="gas">Good gas mileage</label>
-                <label><input type="checkbox" name="liked" value="parking">Easy to park</label>
-                <label><input type="checkbox" name="liked" value="comfort">Comfortable</label>
-                <label><input type="checkbox" name="liked" value="space">Spacious</label>
-                <label><input type="checkbox" name="liked" value="fun">Fun to drive</label>
-                <label><input type="checkbox" name="liked" value="cheapMaintain">Cheap to maintain</label>
-                <label><input type="checkbox" name="liked" value="visibility">Good visibility</label>
-                <label><input type="checkbox" name="liked" value="tech">Easy tech/features</label>
-                <label><input type="checkbox" name="liked" value="awd">All-wheel drive</label>
-                <label><input type="checkbox" name="liked" value="style">The look/style</label>
-                <label><input type="checkbox" name="liked" value="rideHeight">Sat higher up</label>
+              <div class="question-header">
+                <p class="step-kicker">Past car</p>
+                <h3>What did your last car teach you?</h3>
+                <p>Use your own words. This is intentionally open-ended.</p>
               </div>
 
-              <h4>What did you dislike?</h4>
-              <div class="chips">
-                <label><input type="checkbox" name="disliked" value="small">Too small</label>
-                <label><input type="checkbox" name="disliked" value="slow">Too slow</label>
-                <label><input type="checkbox" name="disliked" value="gasbad">Bad gas mileage</label>
-                <label><input type="checkbox" name="disliked" value="repair">Expensive repairs</label>
-                <label><input type="checkbox" name="disliked" value="tech">Not enough tech</label>
-                <label><input type="checkbox" name="disliked" value="unsafe">Felt unsafe</label>
-                <label><input type="checkbox" name="disliked" value="big">Too big</label>
-                <label><input type="checkbox" name="disliked" value="low">Sat too low</label>
-                <label><input type="checkbox" name="disliked" value="uncomfortable">Uncomfortable seats</label>
-                <label><input type="checkbox" name="disliked" value="old">Felt outdated</label>
-                <label><input type="checkbox" name="disliked" value="boring">Boring to drive</label>
-                <label><input type="checkbox" name="disliked" value="storage">Not enough storage</label>
+              <div class="form-grid two">
+                <div>
+                  <label class="field-label">What was your last car?</label>
+                  <input class="field" type="text" name="lastCar" placeholder="Example: 2016 Toyota Camry">
+                </div>
+                <div>
+                  <label class="field-label">How long did you own or drive it?</label>
+                  <select class="field" name="ownershipLength">
+                    <option value="">Select one</option>
+                    <option value="under1">Less than 1 year</option>
+                    <option value="1to3">1 to 3 years</option>
+                    <option value="3to6">3 to 6 years</option>
+                    <option value="6plus">6+ years</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label class="field-label">What did you like about it?</label>
+                  <textarea class="field text-area" name="likedText" placeholder="Examples: reliable, good gas mileage, easy to park, comfortable, spacious, fun to drive, cheap to maintain, good visibility, easy tech/features, all-wheel drive, the look/style, sat higher up..."></textarea>
+                </div>
+                <div>
+                  <label class="field-label">What did you dislike?</label>
+                  <textarea class="field text-area" name="dislikedText" placeholder="Examples: too small, too slow, bad gas mileage, expensive repairs, not enough tech, felt unsafe, too big, sat too low, uncomfortable seats, felt outdated, boring to drive, not enough storage..."></textarea>
+                </div>
               </div>
             </div>
 
             <div class="quiz-step" data-step="3">
-              <h3>What is your budget?</h3>
-              <p class="question-help">You can choose “not sure” if you need help figuring it out.</p>
-              <div class="option-grid compact">
-                <label class="option-card"><input type="radio" name="budget" value="veryLow"><strong>Under $7.5k</strong><small>Lowest cost used options</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="low"><strong>$7.5k to $12k</strong><small>Older used, budget focused</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="mediumLow"><strong>$12k to $20k</strong><small>Solid used-car range</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="medium"><strong>$20k to $35k</strong><small>Newer used or entry new</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="high"><strong>$35k to $50k</strong><small>New SUV, EV, or nicer trim</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="premium"><strong>$50k+</strong><small>Premium, luxury, or performance</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="monthly"><strong>Monthly payment matters most</strong><small>I need help backing into a budget</small></label>
-                <label class="option-card"><input type="radio" name="budget" value="unsure"><strong>Not sure yet</strong><small>I need guidance</small></label>
+              <div class="question-header">
+                <p class="step-kicker">Driving habits</p>
+                <h3>How do you actually drive?</h3>
+                <p>Commute, roads, parking, and driving style change the recommendation.</p>
               </div>
 
-              <h4>Are you open to used cars?</h4>
-              <div class="segmented four">
-                <label><input type="radio" name="used" value="yes"><span>Yes</span></label>
-                <label><input type="radio" name="used" value="certified"><span>Certified used only</span></label>
-                <label><input type="radio" name="used" value="maybe"><span>Maybe</span></label>
-                <label><input type="radio" name="used" value="no"><span>No</span></label>
+              <div class="form-grid three">
+                <div><label class="field-label">Usual one-way commute</label><select class="field" name="commuteDistance"><option value="">Select one</option><option value="none">No regular commute</option><option value="short">Under 5 miles</option><option value="medium">5 to 15 miles</option><option value="long">15 to 30 miles</option><option value="veryLong">30+ miles</option></select></div>
+                <div><label class="field-label">Most of your driving</label><select class="field" name="driveMix"><option value="">Select one</option><option value="city">Mostly city</option><option value="mixed">Mixed city/highway</option><option value="highway">Mostly highway</option><option value="varied">Varied</option></select></div>
+                <div><label class="field-label">Driving style</label><select class="field" name="drivingStyle"><option value="">Select one</option><option value="calm">Calm and easygoing</option><option value="steady">Steady and practical</option><option value="spirited">I like responsiveness</option><option value="aggressive">I want strong acceleration and feel</option></select></div>
               </div>
 
-              <h4>How soon are you trying to buy?</h4>
-              <div class="segmented four">
-                <label><input type="radio" name="timeline" value="now"><span>ASAP</span></label>
-                <label><input type="radio" name="timeline" value="month"><span>Within a month</span></label>
-                <label><input type="radio" name="timeline" value="research"><span>Just researching</span></label>
-                <label><input type="radio" name="timeline" value="unknown"><span>Not sure</span></label>
+              <div class="form-grid two">
+                <div><label class="field-label">Estimated yearly mileage</label><select class="field" name="annualMiles"><option value="">Select one</option><option value="low">Under 7,500</option><option value="average">7,500 to 12,000</option><option value="high">12,000 to 18,000</option><option value="veryHigh">18,000+</option></select></div>
+                <div><label class="field-label">Parking situation</label><select class="field" name="parkingSituation"><option value="">Select one</option><option value="tight">Tight city/apartment parking</option><option value="street">Street parking</option><option value="driveway">Driveway/open lot</option><option value="garage">Garage or roomy parking</option></select></div>
               </div>
             </div>
 
             <div class="quiz-step" data-step="4">
-              <h3>Pick your top priorities.</h3>
-              <p class="question-help">Select up to 4. These heavily shape your result.</p>
-              <div class="chips large" id="priorityChips">
-                <label><input type="checkbox" name="priority" value="reliability">Reliability</label>
-                <label><input type="checkbox" name="priority" value="fuel">Fuel economy</label>
-                <label><input type="checkbox" name="priority" value="safety">Safety</label>
-                <label><input type="checkbox" name="priority" value="payment">Low monthly payment</label>
-                <label><input type="checkbox" name="priority" value="cargo">Cargo space</label>
-                <label><input type="checkbox" name="priority" value="comfort">Comfort</label>
-                <label><input type="checkbox" name="priority" value="tech">Technology</label>
-                <label><input type="checkbox" name="priority" value="style">Looks/style</label>
-                <label><input type="checkbox" name="priority" value="performance">Performance</label>
-                <label><input type="checkbox" name="priority" value="resale">Resale value</label>
-                <label><input type="checkbox" name="priority" value="maintenance">Low maintenance cost</label>
-                <label><input type="checkbox" name="priority" value="visibility">Good visibility</label>
-                <label><input type="checkbox" name="priority" value="awd">AWD/traction</label>
-                <label><input type="checkbox" name="priority" value="brand">Brand reputation</label>
-                <label><input type="checkbox" name="priority" value="easy">Easy to drive</label>
+              <div class="question-header">
+                <p class="step-kicker">Budget</p>
+                <h3>What price ranges are you willing to consider?</h3>
+                <p>Choose multiple ranges if you are flexible. This is better than forcing one exact number.</p>
               </div>
-              <p class="limit-note" id="priorityNote">0 of 4 selected</p>
+
+              <div class="choice-grid three budget-grid">
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="veryLow"><span class="choice-code">B1</span><strong>Under $10,000</strong><small>Older used cars, lowest purchase price.</small></label>
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="low"><span class="choice-code">B2</span><strong>$10,000 to $20,000</strong><small>Used daily-driver range.</small></label>
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="mediumLow"><span class="choice-code">B3</span><strong>$20,000 to $35,000</strong><small>Newer used or entry new options.</small></label>
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="medium"><span class="choice-code">B4</span><strong>$35,000 to $50,000</strong><small>New SUVs, hybrids, and nicer trims.</small></label>
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="high"><span class="choice-code">B5</span><strong>$50,000 to $70,000</strong><small>Premium comfort, EVs, larger SUVs.</small></label>
+                <label class="choice-card compact"><input type="checkbox" name="budgetRange" value="luxury"><span class="choice-code">B6</span><strong>$70,000+</strong><small>Luxury, performance, or high-end utility.</small></label>
+                <label class="choice-card compact wide"><input type="checkbox" name="budgetRange" value="unsure"><span class="choice-code">NS</span><strong>Not sure yet</strong><small>I need help figuring out a realistic range.</small></label>
+              </div>
+
+              <div class="form-grid two extra-spacing">
+                <div>
+                  <label class="field-label">New or used?</label>
+                  <select class="field" name="usedOpen">
+                    <option value="">Select one</option>
+                    <option value="usedOnly">Used only</option>
+                    <option value="mostlyUsed">Prefer used</option>
+                    <option value="open">Open to either</option>
+                    <option value="mostlyNew">Prefer new</option>
+                    <option value="newOnly">New only</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-label">Buying timeline</label>
+                  <select class="field" name="timeline">
+                    <option value="">Select one</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="month">Within 1 month</option>
+                    <option value="3months">Within 3 months</option>
+                    <option value="6months">Within 6 months</option>
+                    <option value="researching">Just researching</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div class="quiz-step" data-step="5">
-              <h3>What does your car need to handle?</h3>
-              <p class="question-help">Choose anything that applies.</p>
-              <div class="chips large">
-                <label><input type="checkbox" name="needs" value="weather">Snow or bad weather</label>
-                <label><input type="checkbox" name="needs" value="gear">Surfboards, bikes, or gear</label>
-                <label><input type="checkbox" name="needs" value="kids">Kids or car seats</label>
-                <label><input type="checkbox" name="needs" value="pets">Pets</label>
-                <label><input type="checkbox" name="needs" value="commute">Long commutes</label>
-                <label><input type="checkbox" name="needs" value="parking">Tight parking</label>
-                <label><input type="checkbox" name="needs" value="trails">Dirt roads or trails</label>
-                <label><input type="checkbox" name="needs" value="towing">Towing or hauling</label>
-                <label><input type="checkbox" name="needs" value="camping">Camping or road trips</label>
-                <label><input type="checkbox" name="needs" value="professional">Professional image</label>
-                <label><input type="checkbox" name="needs" value="elderly">Older passengers</label>
-                <label><input type="checkbox" name="needs" value="highway">Highway driving</label>
-                <label><input type="checkbox" name="needs" value="charging">Access to charging</label>
-                <label><input type="checkbox" name="needs" value="teen">New/teen driver</label>
-                <label><input type="checkbox" name="needs" value="rideshare">Uber/Lyft or delivery work</label>
+              <div class="question-header">
+                <p class="step-kicker">Brands</p>
+                <h3>Do you have any brand preferences?</h3>
+                <p>This does not lock you in. It just tells the consultant what you already trust, like, or want to avoid.</p>
+              </div>
+
+              <div class="form-grid two">
+                <div>
+                  <label class="field-label">Brands you like or would consider</label>
+                  <textarea class="field text-area short" name="brandsLiked" placeholder="Examples: Toyota, Honda, Subaru, Lexus, Mazda, Tesla, BMW, Ford..."></textarea>
+                </div>
+                <div>
+                  <label class="field-label">Brands you want to avoid</label>
+                  <textarea class="field text-area short" name="brandsAvoided" placeholder="Examples: I do not want German luxury, I want to avoid Jeep, no Tesla, no Kia, etc."></textarea>
+                </div>
+              </div>
+
+              <div class="chips brand-chips">
+                <label><input type="checkbox" name="brandSignal" value="toyotaHonda">Toyota / Honda type reliability</label>
+                <label><input type="checkbox" name="brandSignal" value="subaruMazda">Subaru / Mazda practical but nicer</label>
+                <label><input type="checkbox" name="brandSignal" value="american">American brands</label>
+                <label><input type="checkbox" name="brandSignal" value="luxury">Luxury brands</label>
+                <label><input type="checkbox" name="brandSignal" value="evBrands">EV-focused brands</label>
+                <label><input type="checkbox" name="brandSignal" value="noPreference">No strong preference</label>
               </div>
             </div>
 
             <div class="quiz-step" data-step="6">
-              <h3>Which buyer type sounds most like you?</h3>
-              <p class="question-help">This helps us explain the recommendation in plain English.</p>
-              <div class="option-grid">
-                <label class="option-card"><input type="radio" name="personality" value="practical"><span>✅</span><strong>Practical Buyer</strong><small>I want reliable, affordable, and easy to own.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="comfort"><span>☁️</span><strong>Comfort Buyer</strong><small>I want smooth, quiet, and comfortable.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="adventure"><span>🌲</span><strong>Adventure Buyer</strong><small>I need space, capability, and versatility.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="tech"><span>📱</span><strong>Tech Buyer</strong><small>I care about features and modern design.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="performance"><span>⚡</span><strong>Performance Buyer</strong><small>I want something fun and responsive.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="value"><span>💸</span><strong>Value Buyer</strong><small>I want the best deal without getting ripped off.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="safe"><span>🛡️</span><strong>Safety Buyer</strong><small>I want visibility, driver assists, and peace of mind.</small></label>
-                <label class="option-card"><input type="radio" name="personality" value="simple"><span>🔧</span><strong>Low-Stress Buyer</strong><small>I want something simple, proven, and cheap to maintain.</small></label>
+              <div class="question-header">
+                <p class="step-kicker">Priorities</p>
+                <h3>What matters most?</h3>
+                <p>Select up to 5 priorities.</p>
+              </div>
+
+              <div class="chips" id="priorityChips">
+                <label><input type="checkbox" name="priority" value="reliability">Reliability</label>
+                <label><input type="checkbox" name="priority" value="gas">Fuel economy</label>
+                <label><input type="checkbox" name="priority" value="safety">Safety</label>
+                <label><input type="checkbox" name="priority" value="payment">Low monthly cost</label>
+                <label><input type="checkbox" name="priority" value="cargo">Cargo space</label>
+                <label><input type="checkbox" name="priority" value="comfort">Comfort</label>
+                <label><input type="checkbox" name="priority" value="tech">Tech/features</label>
+                <label><input type="checkbox" name="priority" value="style">Looks/style</label>
+                <label><input type="checkbox" name="priority" value="performance">Performance</label>
+                <label><input type="checkbox" name="priority" value="resale">Resale value</label>
+                <label><input type="checkbox" name="priority" value="maintenance">Low maintenance</label>
+                <label><input type="checkbox" name="priority" value="visibility">Visibility</label>
+                <label><input type="checkbox" name="priority" value="awd">All-weather traction</label>
+                <label><input type="checkbox" name="priority" value="easy">Easy to park</label>
+                <label><input type="checkbox" name="priority" value="quiet">Quiet cabin</label>
+              </div>
+              <p class="limit-note" id="priorityNote">0 of 5 selected</p>
+            </div>
+
+            <div class="quiz-step" data-step="7">
+              <div class="question-header">
+                <p class="step-kicker">Needs</p>
+                <h3>What does the car need to handle?</h3>
+                <p>Choose anything that applies.</p>
+              </div>
+
+              <div class="chips">
+                <label><input type="checkbox" name="needs" value="weather">Snow or heavy rain</label>
+                <label><input type="checkbox" name="needs" value="gear">Surfboards, bikes, or outdoor gear</label>
+                <label><input type="checkbox" name="needs" value="kids">Kids or car seats</label>
+                <label><input type="checkbox" name="needs" value="pets">Pets</label>
+                <label><input type="checkbox" name="needs" value="trails">Dirt roads or rough access</label>
+                <label><input type="checkbox" name="needs" value="towing">Towing or hauling</label>
+                <label><input type="checkbox" name="needs" value="professional">Professional image</label>
+                <label><input type="checkbox" name="needs" value="teen">New/teen driver</label>
+                <label><input type="checkbox" name="needs" value="elderly">Older passengers</label>
+                <label><input type="checkbox" name="needs" value="charging">Charging access</label>
+                <label><input type="checkbox" name="needs" value="rideshare">Rideshare/delivery work</label>
+                <label><input type="checkbox" name="needs" value="weekendTrips">Weekend trips</label>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="8">
+              <div class="question-header">
+                <p class="step-kicker">Final context</p>
+                <h3>Anything else we should know?</h3>
+                <p>Add preferences, dealbreakers, concerns, or random details that did not fit anywhere else.</p>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label class="field-label">Extra preferences or dealbreakers</label>
+                  <textarea class="field text-area tall" name="extraContext" placeholder="Examples: I hate low cars, I need room for a dog crate, I care about Apple CarPlay, I do not want a huge car, I want something that looks professional, I am worried about repair costs..."></textarea>
+                </div>
+              </div>
+
+              <div class="question-header final-question">
+                <p class="step-kicker">Buyer type</p>
+                <h3>Which description sounds most like you?</h3>
+              </div>
+
+              <div class="choice-grid four">
+                <label class="choice-card"><input type="radio" name="personality" value="practical"><span class="choice-code">PR</span><strong>Practical</strong><small>I want the safe, proven choice.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="comfort"><span class="choice-code">CF</span><strong>Comfort</strong><small>I care about ride quality and refinement.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="adventure"><span class="choice-code">AD</span><strong>Adventure</strong><small>I want room for stuff and trips.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="tech"><span class="choice-code">TC</span><strong>Tech</strong><small>I like modern features and interfaces.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="performance"><span class="choice-code">PF</span><strong>Performance</strong><small>I want something engaging to drive.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="value"><span class="choice-code">VL</span><strong>Value</strong><small>I want the most for the money.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="safe"><span class="choice-code">SF</span><strong>Safety</strong><small>I want confidence and peace of mind.</small></label>
+                <label class="choice-card"><input type="radio" name="personality" value="simple"><span class="choice-code">LS</span><strong>Low-stress</strong><small>I want ownership to be predictable.</small></label>
               </div>
             </div>
 
@@ -300,14 +446,23 @@
         </div>
       </div>
 
-      <div class="results-panel hidden" id="resultsPanel">
-        <div class="result-top">
+      <div class="results-panel liquid-card hidden" id="resultsPanel">
+        <div class="result-head">
           <div>
             <p class="eyebrow">Your result</p>
-            <h2 id="resultTitle">Practical Commuter</h2>
+            <h2 id="resultTitle">Practical commuter</h2>
             <p id="resultSummary">You need a reliable, affordable car that makes everyday driving simple.</p>
           </div>
-          <div class="result-score"><span id="topScore">92%</span><small>Top match</small></div>
+          <div class="result-score">
+            <span id="topScore">91%</span>
+            <small>top match</small>
+          </div>
+        </div>
+
+        <div class="insight-strip">
+          <div><small>Primary consultant</small><strong id="consultantTitleInline">Budget & Used Car Specialist</strong></div>
+          <div><small>Budget window</small><strong id="budgetWindow">Not specified</strong></div>
+          <div><small>Brand notes</small><strong id="brandNotes">No strong preference</strong></div>
         </div>
 
         <div class="result-grid">
@@ -315,12 +470,13 @@
             <h3>Best category matches</h3>
             <div id="matchList"></div>
           </div>
+
           <div class="consultant-card">
             <p class="eyebrow">Consultant match</p>
             <h3 id="consultantTitle">Budget & Used Car Specialist</h3>
             <p id="consultantText">Best for narrowing down reliable models, used-car risks, and fair price ranges.</p>
-            <button class="btn primary full" id="openBooking">Book a consultation</button>
-            <button class="btn secondary full" id="downloadReport">Generate report preview</button>
+            <button type="button" class="btn primary full" id="openBooking">Book a consultation</button>
+            <button type="button" class="btn secondary full" id="downloadReport">Generate report preview</button>
           </div>
         </div>
 
@@ -331,84 +487,44 @@
       </div>
     </section>
 
-    <section class="consultants" id="consultants">
+    <section class="consultants shell" id="consultants">
       <div class="section-heading">
-        <p class="eyebrow">Human help</p>
-        <h2>Talk to someone who can explain the tradeoffs.</h2>
+        <p class="eyebrow">Human guidance</p>
+        <h2>For when a quiz result is not enough.</h2>
       </div>
+
       <div class="consultant-grid">
-        <article class="person-card">
-          <div class="avatar">AR</div>
-          <h3>Alex Rivera</h3>
-          <p>Used Car & Budget Specialist</p>
-          <small>Helps buyers avoid overpriced, unreliable, or expensive-to-maintain used cars.</small>
-        </article>
-        <article class="person-card">
-          <div class="avatar">MC</div>
-          <h3>Maya Chen</h3>
-          <p>Family & Safety Specialist</p>
-          <small>Focuses on practical SUVs, crossovers, safety features, and long-term ownership.</small>
-        </article>
-        <article class="person-card">
-          <div class="avatar">JL</div>
-          <h3>Jordan Lee</h3>
-          <p>EV & Hybrid Specialist</p>
-          <small>Helps compare gas, hybrid, plug-in hybrid, and EV options without the confusion.</small>
-        </article>
+        <article class="person-card liquid-card"><div class="avatar">AR</div><h3>Alex Rivera</h3><p>Budget & Used Car Specialist</p><small>Good for first cars, daily drivers, ownership cost, and avoiding bad used-car buys.</small></article>
+        <article class="person-card liquid-card"><div class="avatar">MC</div><h3>Maya Chen</h3><p>Family & Lifestyle Specialist</p><small>Good for SUVs, safety, cargo tradeoffs, and realistic family or gear-hauling needs.</small></article>
+        <article class="person-card liquid-card"><div class="avatar">JL</div><h3>Jordan Lee</h3><p>EV & Hybrid Specialist</p><small>Good for sorting through gas, hybrid, plug-in hybrid, and EV options without the nonsense.</small></article>
       </div>
     </section>
 
-    <section class="pricing" id="pricing">
-      <div class="section-heading">
+    <section class="pricing shell" id="pricing">
+      <div class="section-heading centered">
         <p class="eyebrow">Pricing</p>
-        <h2>Simple help before you spend thousands.</h2>
+        <h2>Cheap clarity before a very expensive decision.</h2>
       </div>
+
       <div class="pricing-grid">
-        <article class="price-card">
-          <h3>Basic Report</h3>
-          <p class="price">$29</p>
-          <ul>
-            <li>Personalized car category match</li>
-            <li>Budget and priority summary</li>
-            <li>General vehicle type recommendations</li>
-          </ul>
-          <a href="#quiz" class="btn secondary full">Start quiz</a>
-        </article>
-        <article class="price-card featured">
-          <span class="tag">Best value</span>
-          <h3>Video Call</h3>
-          <p class="price">$59</p>
-          <ul>
-            <li>30-minute consultant call</li>
-            <li>New vs used guidance</li>
-            <li>Questions before dealership or online shopping</li>
-          </ul>
-          <a href="#quiz" class="btn primary full">Start quiz</a>
-        </article>
-        <article class="price-card">
-          <h3>Full Match</h3>
-          <p class="price">$99</p>
-          <ul>
-            <li>Report + video call</li>
-            <li>Specific model shortlist</li>
-            <li>What to avoid and what to search for</li>
-          </ul>
-          <a href="#quiz" class="btn secondary full">Start quiz</a>
-        </article>
+        <article class="price-card liquid-card"><h3>Basic Report</h3><p class="price">$29</p><ul><li>Category match breakdown</li><li>Main tradeoffs to watch</li><li>Where to focus your search</li></ul><a href="#quiz" class="btn secondary full">Start quiz</a></article>
+        <article class="price-card liquid-card featured"><span class="tag">Best value</span><h3>Video Call</h3><p class="price">$59</p><ul><li>30-minute consultant call</li><li>Clarifies new vs used</li><li>Best if you are close to buying</li></ul><a href="#quiz" class="btn primary full">Start quiz</a></article>
+        <article class="price-card liquid-card"><h3>Full Match</h3><p class="price">$99</p><ul><li>Report plus consultant call</li><li>Specific shortlist direction</li><li>Best for overwhelmed buyers</li></ul><a href="#quiz" class="btn secondary full">Start quiz</a></article>
       </div>
     </section>
   </main>
 
   <div class="booking-modal hidden" id="bookingModal" role="dialog" aria-modal="true" aria-label="Book a consultation">
-    <div class="modal-card">
+    <div class="modal-card liquid-card">
       <button class="close-modal" id="closeBooking" aria-label="Close booking modal">×</button>
       <p class="eyebrow">Book next step</p>
       <h2>Talk to a consultant</h2>
       <p>Drop your info and choose what kind of help you want. This is a prototype form.</p>
+
       <form class="booking-form" id="bookingForm">
-        <input class="text-input" type="text" placeholder="Name" required>
-        <input class="text-input" type="email" placeholder="Email" required>
-        <select class="text-input" required>
+        <input class="field" type="text" placeholder="Name" required>
+        <input class="field" type="email" placeholder="Email" required>
+        <select class="field" required>
           <option value="">Choose service</option>
           <option>Basic report</option>
           <option>Video call</option>
@@ -416,11 +532,12 @@
         </select>
         <button class="btn primary full" type="submit">Submit request</button>
       </form>
+
       <p class="success-message hidden" id="bookingSuccess">Request received. A consultant would follow up with scheduling details.</p>
     </div>
   </div>
 
-  <footer class="footer">
+  <footer class="footer shell">
     <p>CarClarity © 2026</p>
     <p>Find the right car before you start shopping.</p>
   </footer>
